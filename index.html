@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selector de Emociones</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 50px;
+      font-family: Arial, sans-serif;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Selector de Emociones</h1>
+
+  <button onclick="mostrarImagen('imagen1')">Contento</button>
+  <button onclick="mostrarImagen('imagen2')">Neutro</button>
+  <button onclick="mostrarImagen('imagen3')">Triste</button>
+
+  <div id="contenedorImagen">
+    <img id="imagen1" src="ruta_imagen_contento.jpg" alt="Contento">
+    <img id="imagen2" src="ruta_imagen_neutro.jpg" alt="Neutro">
+    <img id="imagen3" src="ruta_imagen_triste.jpg" alt="Triste">
+  </div>
+
+  <script>
+    function mostrarImagen(idImagen) {
+      // Ocultar todas las imágenes
+      var imagenes = document.getElementsByTagName('img');
+      for (var i = 0; i < imagenes.length; i++) {
+        imagenes[i].style.display = 'none';
+      }
+
+      // Mostrar la imagen correspondiente al botón clicado
+      var imagenMostrar = document.getElementById(idImagen);
+      imagenMostrar.style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
+
